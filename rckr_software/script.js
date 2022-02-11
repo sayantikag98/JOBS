@@ -2,11 +2,9 @@ const dataFetch = async () => {
     const response = await fetch("https://cdn.jsdelivr.net/gh/apilayer/restcountries@3dc0fb110cd97bce9ddf27b3e8e1f7fbe115dc3c/src/main/resources/countriesV2.json");
     let data = await response.json();
 
-    const populationLimit = 840974;
+    const populationLimit = 28875;
 
 
-
-    // data = data.filter(ele => ele.population >= populationLimit);
     const subData = [];
 
     data.forEach(ele => {
@@ -25,8 +23,6 @@ const dataFetch = async () => {
         });
 
     });
-
-    // console.log(currencyList.sort());
 
     const finalCurrencyList = {};
 
@@ -92,7 +88,7 @@ const dataFetch = async () => {
     });
 
     const currencyNameFinalList = currencyNameList.filter(ele => currencyNameList1FromCode.includes(ele));
-
+    
 
     let subData1 = [];
     currencyNameFinalList.forEach(ele => {
@@ -146,6 +142,7 @@ const dataFetch = async () => {
     // console.log(calculateDistance([35.6544, 139.74477], [21.4225, 39.8261]));
 
     let distanceAns = 0;
+
 
     for(let i = 0; i<finalData.length - 1; i++){
         for(let j = i+1; j<finalData.length; j++){
